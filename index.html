@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="전북 부안군에 위치한 컴퓨터이리온! 친절한 서비스와 투명한 가격!">
+    <meta property="og:title" content="컴퓨터이리온 - 모든 컴퓨터 문제, 이리온으로!">
+    <meta property="og:description" content="컴퓨터이리온의 위치와 빠른상담기능, 그리고 블로그와 조립사진!">
+    <meta property="og:url" content="https://adasdagfa.github.io">
+    <meta property="og:image" content="https://adasdagfa.github.io/favicon.png">
     <title>컴퓨터이리온 - 모든 컴퓨터 문제, 이리온으로!</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
@@ -12,6 +17,8 @@
 
     <meta name="google-site-verification" content="NK2v3P73xC7mKaZmsTcS73YCooyHq_aZFGfqx3E89YI" />
     <meta name="naver-site-verification" content="a8d494a007b585ce5ad1f0316500ed374754a20a" />
+
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=7xmmesxfh1"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -170,13 +177,13 @@
     <section id="location" class="container">
         <h2>📍 매장 위치 및 영업시간</h2>
         <div class="location-content">
-            <div class="map-placeholder">
-                <a href="https://map.naver.com/p/entry/place/1281667971" target="_blank" style="display: block;">
-                    <img src="static/map.png"
-                         alt="컴퓨터이리온 매장 위치 지도"
-                         style="width: 100%; height: auto; display: block; border: 0;">
-                </a>
-            </div>
+
+            <div id="map" style="width: 100%; height: 400px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ddd;"></div>
+
+            <a href="https://map.naver.com/p/entry/place/1281667971?placePath=/home" target="_blank" class="btn" style="display:inline-block; margin-bottom:20px; background-color:#03C75A; color:white;">
+                네이버 지도 앱에서 보기
+            </a>
+
             <div class="info">
                 <p>
                     <strong>주소:</strong> 전북특별자치도 부안군 부안읍 용암로 89 <br>
@@ -204,5 +211,20 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script type="text/javascript">
+        // 좌표: 전북 부안군 부안읍 용암로 89 (컴퓨터이리온 위치 근처)
+        var mapOptions = {
+            center: new naver.maps.LatLng(35.729154, 126.733525),
+            zoom: 17
+        };
+
+        var map = new naver.maps.Map('map', mapOptions);
+
+        var marker = new naver.maps.Marker({
+            position: new naver.maps.LatLng(35.729154, 126.733525),
+            map: map
+        });
+    </script>
 </body>
 </html>
